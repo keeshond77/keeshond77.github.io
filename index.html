@@ -5,74 +5,12 @@
     <title>EMPRESA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<script>
-
-function switchDarkMode() {
-    if (document.querySelector("#checkbox").checked) 
-    {
-        localStorage.setItem("darkmode", true);
-        changeToDarkMode();
-    } 
-    else 
-    {
-        localStorage.setItem("darkmode", false);
-        changeToDarkMode()
-    }
-}
-
-
-function setDarkMode() {
-    if (localStorage.getItem("darkmode") == "true")
-        document.querySelector("#checkbox").checked = true
-    else if (localStorage.getItem("darkmode") == "false") 
-        document.querySelector("#checkbox").checked = false;
-}
-
-window.onload = (event) => {
-    setDarkMode();
-};
-
-
-</script>
-
-<script>
-
-function changeToDarkMode() {
-    if (localStorage.getItem("darkmode") == "true") 
-    {
-        page = document.createElement('style')
-        page.innerHTML = "html {filter: invert(100%) hue-rotate(180deg);}";
-        document.body.appendChild(page); 
-        page = document.createElement('style')
-        page.innerHTML = "html :is(iframe,video,img,.dashboard-card,.tile) {filter: invert(100%); hue-rotate(180deg);}";
-        document.body.appendChild(page); 
-    } 
-    else if (localStorage.getItem("darkmode") == "false") 
-    {
-        page = document.createElement('style')
-        page.innerHTML = "html {filter: invert(0%) hue-rotate(0deg);}";
-        document.body.appendChild(page); 
-        page = document.createElement('style')
-        page.innerHTML = "html :is(iframe,video,img,.dashboard-card,.tile) {filter: invert(0%) hue-rotate(0deg);}";
-        document.body.appendChild(page); 
-    }
-}
-
-</script>
-
-
-	
 <body>
     <header>
         <h1>CATALOGO</h1>
     </header>
 
-    <div class="banner" align="center"><img src="images/banner.jpg" alt="banner">
-    <p><input type="checkbox" 
-    id="checkbox" value="darkmode" 
-    onchange="switchDarkMode()"> 
-    Modo oscuro?
-</p>
+    <div class="banner" align="center"><img src="images/banner.jpg" alt="banner"></p>
     
     </div>
 
